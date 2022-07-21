@@ -1,6 +1,5 @@
 package com.spring.demo.springdemoannotations;
 
-import com.spring.demo.springdemoannotations.coaches.Coach;
 import com.spring.demo.springdemoannotations.coaches.SwimCoach;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,6 +15,6 @@ public class JavaConfigDemoApplication {
         System.out.println(coach.getDailyWorkout());
         System.out.println(coach.getDailyFortune());
         System.out.println(coach.getEmail());
-        System.out.println(coach.getTeam() );
+        System.out.println(coach.getTeam());
     }
 }
