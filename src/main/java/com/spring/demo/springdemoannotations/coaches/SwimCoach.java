@@ -1,12 +1,22 @@
 package com.spring.demo.springdemoannotations.coaches;
 
 import com.spring.demo.springdemoannotations.services.FortuneService;
-import lombok.AllArgsConstructor;
+import lombok.Getter;
+import org.springframework.beans.factory.annotation.Value;
 
-@AllArgsConstructor
+@Getter
 public class SwimCoach implements Coach {
 
     private final FortuneService fortuneService;
+
+    public SwimCoach(FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
+    }
+
+    @Value("${foo.email}")
+    private String email;
+    @Value("${foo.team}")
+    private String team;
 
     @Override
     public String getDailyWorkout() {
