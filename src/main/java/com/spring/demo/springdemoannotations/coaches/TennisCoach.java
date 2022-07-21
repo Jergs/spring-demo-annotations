@@ -2,17 +2,18 @@ package com.spring.demo.springdemoannotations.coaches;
 
 import com.spring.demo.springdemoannotations.services.FortuneService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TennisCoach implements Coach {
-    @Autowired
-    private FortuneService fortuneService;
 
-    /*@Autowired
-    public TennisCoach(FortuneService fortuneService) {
+    private final FortuneService fortuneService;
+
+    @Autowired
+    public TennisCoach(@Qualifier("randomFortuneService") FortuneService fortuneService) {
         this.fortuneService = fortuneService;
-    }*/
+    }
 
     /*@Autowired
     public void setFortuneService(FortuneService fortuneService) {
